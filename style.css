@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-size: 16px;
+    /* ~ 1rem */
 }
 
 :root {
@@ -26,19 +27,62 @@ main {
     background-color: blanchedalmond;
 }
 
+nav {
+    height: 5rem;
+    background-color: brown;
+    display: flex;
+}
+
+.navbar_pinterest_buttons_container {
+    width: 16rem;
+    background-color: aquamarine;
+}
+
+.navbar_input_search_container {
+    flex-grow: 4;
+    min-width: 3rem;
+    background-color: darkolivegreen;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search {
+    padding-inline-start: 0.6rem;
+    height: 3rem;
+    width: 100%;
+    background-color: #e9e9e9;
+    border-radius: 1.5rem;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search>svg {
+    height: 1rem;
+}
+
+.navbar_input_search>input {
+    height: 1rem;
+    flex-grow: 3;
+}
+
+.navbar_user_buttons_container {
+    width: 13rem;
+    background-color: coral;
+}
+
 .pin_container {
     margin: 0;
     padding: 0;
-    width: 80%;
+    width: 100%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--card_width));
     grid-auto-rows: var(--row_increment);
     justify-content: center;
-
     background-color: black;
 }
 
