@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav></nav>
+    <main>
+        <!-- Contenedor de pines -->
+        <div class="pin_container">
+            <div class="card card_small"></div>
+            <div class="card card_medium"></div>
+            <div class="card card_large"></div>
+            <div class="card card_small"></div>
+            <div class="card card_medium"></div>
+            <div class="card card_large"></div>
+            <div class="card card_small"></div>
+            <div class="card card_medium"></div>
+            <div class="card card_large"></div>
+        </div>
+        <!-- Fin de contenedor de pines -->
+        <!-- Botón flotante -->
+        <div class="container-fluid d-flex position-absolute bottom-0 end-0">
+            <a title="Agregar" class="btn btn-primary btn-lg rounded-circle ms-auto me-5 mb-5"
+                ng-click="disposeRequest()" data-bs-toggle="modal" data-bs-target="#newRequest">
+                <i class="fa-solid fa-plus"></i>
+            </a>
+        </div>
+        <!-- Fin botón flotante -->
+    </main>
+</body>
+
+</html>
