@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    /* ~ 1rem */
+}
+
+:root {
+    --card_width: 15.625rem;
+    /*~250px Anchura de la tarjeta/pin */
+    --row_increment: 0.625rem;
+    /*~10px Al estar usando CSS grid, cada tarjeta/pin estará hecha con incrementos de 10px para las filas */
+    --card_border_radius: 1rem;
+    /*~16px  Redondeo en los bordes de las tarjetas/pines*/
+    --card_small: 26;
+    /* Factor de crecimiento para tarjetas pequeñas: 26*0.625rem */
+    --card_medium: 33;
+    /* Factor de crecimiento para tarjetas medianas: 26*0.625rem */
+    --card_large: 45;
+    /* Factor de crecimiento para tarjetas grandes: 26*0.625rem */
+}
+
+#content {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+nav {
+    height: 5rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+.navbar_pinterest_buttons_container {
+    width: 16rem;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+}
+
+#pinterest_icon{
+    color: red;
+}
+
+#boton_inicio{
+    background-color: black;
+    color: #ffffff;
+    border-radius: 30%;
+}
+
+#boton_hoy{
+    background-color: transparent;
+    color: black;
+    border: 0;
+    align-content: center;
+    margin-top: 2rem;
+}
+
+.navbar_input_search_container {
+    flex-grow: 4;
+    min-width: 3rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search {
+    margin-inline: 0.8rem;
+    padding-inline-start: 0.8rem;
+    height: 3rem;
+    width: 100%;
+    background-color: #e9e9e9;
+    border-radius: 1.5rem;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search>svg {
+    height: 0.9rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar_input_search>input {
+    height: 2rem;
+    flex-grow: 3;
+    margin-inline-end: 1rem;
+    margin-inline-start: 0.8rem;
+    background-color: transparent;
+    border-style: none;
+}
+
+.navbar_input_search>input:focus-visible {
+    outline: none;
+}
+
+.navbar_user_buttons_container {
+    width: 13rem;
+    background-color: rgb(253, 253, 253);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#notificaciones{
+    border-radius: 50%;
+    border: 0;
+    background-color:transparent;
+    color: #4d4c4c;
+}
+
+#mensajes{
+    border-radius: 50%;
+    border: 0;
+    background-color:transparent;
+    color: #4d4c4c;
+}
+
+#imagenperfil{
+    border-radius: 50%;
+    border: 0;
+    background-color:transparent;
+    color: #4d4c4c;
+    width: 8rem;
+    height: 8rem;
+}
+
+.pin_container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.card_buttons_on_hover{
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    opacity: 0;
+    background-color: rgba(60, 60, 60, 0.3);
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: var(--card_border_radius);
+}
+
+.card_buttons_on_hover:hover{
+    opacity: 1;
+}
+.card {
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: var(--card_border_radius);
+    background-color: red;
+}
+
+.card_small {
+    grid-row-end: span var(--card_small);
+}
+
+.card_medium {
+    grid-row-end: span var(--card_medium);
+}
+
+.card_large {
+    grid-row-end: span var(--card_large);
+}
+
+.card_buttons_on_hover{
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    opacity: 0;
+    background-color: rgba(60, 60, 60, 0.3);
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: var(--card_border_radius);
+}
+.card-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    text-align: center;
+    border-radius: var(--card_border_radius);
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card_border_radius);
+}
+
+.tarjeta_arriba{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: 0.5rem;
+}
+
+.tarjeta-abajo{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: 0.5rem;
+}
+
+#boton_actualizar{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: end;
+    margin-top: auto;
+    background-color: rgba(255,255,255,0.6);
+    border: 0;
+    margin-inline-end: 0.5rem;
+}
+#boton_actualizar:hover{
+    background-color:#ffffff;
+}
+
+#boton_trespuntos{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: end;
+    margin-top: auto;
+    background-color: rgba(255,255,255,0.6); 
+    border: 0;
+}
+
+#boton_trespuntos:hover{
+    background-color: #ffffff;
+}
+
+.boton_guardar{
+    min-width: 6rem;
+    height: 2.5rem;
+    color: #ffffff;
+    border: 0;
+    border-radius: 62.43rem;
+    background: red;
+    font-size: 16px;
+    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto;
+    font-weight: bold;
+}
+.boton_guardar:hover{
+    background-color: #ac0505;
+}
+
+#boton_actualizarM{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: end;
+    margin-top: auto;
+    background-color: rgba(255,255,255,0.6);
+    border: 0;
+    margin-inline-end: 0.5rem;
+}
+#boton_actualizarM:hover{
+    background-color:#ffffff;
+}
+
+#boton_trespuntosM{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: end;
+    margin-top: auto;
+    background-color: rgba(255,255,255,0.6); 
+    border: 0;
+}
+
+#boton_trespuntosM:hover{
+    background-color: #fffcfc;
+}
+
+#boton_actualizarL{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: end;
+    margin-top: auto;
+    background-color: rgba(255,255,255,0.6);
+    border: 0;
+    margin-inline-end: 0.5rem;
+}
+#boton_actualizarL:hover{
+    background-color:#ffffff;
+}
+
+#boton_trespuntosL{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: end;
+    margin-top: auto;
+    background-color: rgba(255,255,255,0.6); 
+    border: 0;
+}
+
+#boton_trespuntosL:hover{
+    background-color: #fffcfc;
+}
