@@ -44,17 +44,51 @@ nav {
 }
 
 #boton_inicio{
-    background-color: black;
-    color: #ffffff;
-    border-radius: 30%;
+    min-width: 3.5rem;
+    height: 3rem;
+    border: 0;
+    background: #fdfdfd;
+    font-size: 16px;
 }
 
+#boton_inicio:focus{
+    color: white;
+    background: black;
+    border-radius: 62.43rem;
+    font-weight: bold;
+}
+
+@media (max-width: 800px){
+    .boton_inicio {
+        display: none;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
 #boton_hoy{
-    background-color: transparent;
-    color: black;
+    min-width: 3.5rem;
+    height: 3rem;
     border: 0;
-    align-content: center;
-    margin-top: 2rem;
+    background: #fdfdfd;
+    font-size: 16px;
+}
+
+#boton_hoy:focus{
+    color: white;
+    background: black;
+    border-radius: 62.43rem;
+    font-weight: bold;
+}
+@media (max-width:800px){
+    .boton_hoy {
+        display: none;
+    }
+}
+#boton_crear{
+    min-width: 3.5rem;
+    height: 3rem;
+    border: 0;
+    background: #fdfdfd;
+    font-size: 16px;
 }
 
 .navbar_input_search_container {
@@ -106,27 +140,25 @@ nav {
     align-items: center;
 }
 
-#notificaciones{
+#notificacions{
     border-radius: 50%;
     border: 0;
     background-color:transparent;
     color: #4d4c4c;
 }
 
-#mensajes{
+#menssage{
     border-radius: 50%;
     border: 0;
     background-color:transparent;
     color: #4d4c4c;
 }
 
-#imagenperfil{
+#profile-img{
     border-radius: 50%;
     border: 0;
     background-color:transparent;
     color: #4d4c4c;
-    width: 8rem;
-    height: 8rem;
 }
 
 .pin_container {
@@ -182,22 +214,6 @@ nav {
     grid-row-end: span var(--card_large);
 }
 
-.card_buttons_on_hover{
-    width: 100%;
-    height: 100%;   
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    opacity: 0;
-    background-color: rgba(60, 60, 60, 0.3);
-    color: white;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: var(--card_border_radius);
-}
 .card-image{
     width: 100%;
     height: 100%;
